@@ -1,0 +1,16 @@
+<div class="page">
+  <div class="header">
+    <h1>🎄クリスマスに食べたいメニュー🍗</h1>
+    <button mat-flat-button color="accent" (click)="openAddDialog()">
+      <mat-icon>restaurant</mat-icon>
+      登録
+    </button>
+  </div>
+  <div class="content">
+    <app-list [list]="list"
+      (vote)="vote($event)"
+      (edit)="openEditDialog($event)"
+      (delete)="delete($event)"
+    ></app-list>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="add">
+  <div class="forms">
+    <mat-form-field color="accent">
+      <mat-label>メニュー名</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        #nameControl="ngModel"
+        [ngModel]="name()"
+        (ngModelChange)="name.set($event)"
+      >
+      @if (nameControl.hasError('required')) {
+        <mat-error>メニュー名は必須</mat-error>
+      }
+    </mat-form-field>
+  
+    <mat-form-field color="accent">
+      <mat-label>推薦文</mat-label>
+      <textarea
+        type="text"
+        matInput
+        #recommendationControl="ngModel"
+        [ngModel]="recommendation()"
+        (ngModelChange)="recommendation.set($event)"
+      ></textarea>
+    </mat-form-field>
+  
+    <mat-form-field color="accent">
+      <mat-label>誰が登録した？</mat-label>
+      <mat-select
+        [value]="createdBy()"
+        (selectionChange)="createdBy.set($event.value)"
+      > 
+        @for (family of families; track $index) {
+          <mat-option [value]="family">{{ family }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="btn-area">
+    <button mat-flat-button (click)="cancel.emit()">キャンセル</button>
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="nameControl.invalid"
+      (click)="onAdd()"
+    >登録</button>
+  </div>
+</div>

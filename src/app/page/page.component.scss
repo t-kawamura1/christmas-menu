@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  background-color: #fcfcfc;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
+
+  button {
+  }
+}
+
+.content {
+}
