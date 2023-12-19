@@ -39,7 +39,7 @@ export class ListComponent implements OnChanges {
     'createdBy',
     'votes',
     'plus',
-    // 'edit',
+    'edit',
     'delete',
   ]
 
